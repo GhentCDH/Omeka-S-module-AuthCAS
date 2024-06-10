@@ -34,10 +34,10 @@ class CasAdapter extends AbstractAdapter
             $settings = $this->getServiceLocator()->get('Omeka\Settings');
             // die($settings->get('cas_server_hostname'));
             try {
-// Enable debugging
-phpCAS::setLogger();
-// Enable verbose error messages. Disable in production!
-phpCAS::setVerbose(true);
+                // Enable debugging
+                // phpCAS::setLogger();
+                // Enable verbose error messages. Disable in production!
+                // phpCAS::setVerbose(true);
                 phpCAS::client(
                     $settings->get('cas_server_version'),
                     $settings->get('cas_server_hostname'),

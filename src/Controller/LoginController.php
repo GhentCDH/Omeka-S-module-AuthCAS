@@ -10,8 +10,6 @@ class LoginController extends AbstractActionController
 {
     public function __construct(protected EntityManager $entityManager, protected AuthenticationService $auth)
     {
-        print_r($_SERVER);
-        die();
         $this->entityManager = $entityManager;
         $this->auth = $auth;
     }
