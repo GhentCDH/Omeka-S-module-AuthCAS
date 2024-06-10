@@ -22,11 +22,11 @@ jobs:
       - name: "Create archive release"
         uses: "thedoctor0/zip-release@master"
         with:
-          filename: "{AddonZipName}.zip"
+          filename: "AuthCAS.zip"
           exclusions: "*.git* .tx/ language/*.po* .editorconfig phpcs.xml.dist"
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: '{AddonZipName}.zip'
+          artifacts: 'AuthCAS.zip'
           bodyFile: "RELEASE.md"
           token: ${{ secrets.GITHUB_TOKEN }}
