@@ -1,0 +1,32 @@
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@master"
+      - name: "Set up PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "latest"
+      - name: "Composer install"
+        uses: "ramsey/composer-install@v2"
+        with:
+          composer-options: "--ignore-platform-reqs --optimize-autoloader"
+      - name: "Create archive release"
+        uses: "thedoctor0/zip-release@master"
+        with:
+          filename: "{AddonZipName}.zip"
+          exclusions: "*.git* .tx/ language/*.po* .editorconfig phpcs.xml.dist"
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: '{AddonZipName}.zip'
+          bodyFile: "RELEASE.md"
+          token: ${{ secrets.GITHUB_TOKEN }}
