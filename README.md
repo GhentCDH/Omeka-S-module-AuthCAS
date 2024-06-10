@@ -1,16 +1,17 @@
 # AuthCAS (module for Omeka-S)
 
+This module enables CAS authentication for Omeka-S. 
+
+This module requires the CAS service to return an e-mail address, which is used to identiy the exising Omeka-S user. 
+If needed, you can configure the module to create a new user on first logon.
+
+When enabled, the default authentication page is replaced with a redirect to a CAS login service. 
+
+To disable this behaviour and access the Omeka authentication page, use '/login?omeka' to login.
+
 ## Requirements
 
-- Omeka-S 3 or higher
-
-## Install
-
-    cd omeka-s-path/modules
-
-    git clone git@github.ugent.be:GhentCDH/omekas_cas.git Cas
-    cd AuthCAS
-    composer install --no-dev
+- Omeka-S >= 4
 
 ## License
 
