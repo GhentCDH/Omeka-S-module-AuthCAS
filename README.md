@@ -17,9 +17,6 @@ To disable this behaviour and access the Omeka authentication page, use '/login?
 
 This module is published under the [MIT](LICENSE) license.
 
-## Copyright
-
-* Copyright [Ghent Centre for Digital Humanities](https://www.ghentcdh.ugent.be), 2024
 
 ## Credits
 
